@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Alba de Iranzo — Tu socia de crecimiento online</title>
-<meta name="description" content="Ayudo a marcas de viaje con componente tecnológico a escalar a siete cifras. Vengo de la banca de inversión: analizo tu negocio online como se analiza una empresa cotizada.">
+<title>Alba D. Iranzo — Consultoría estratégica de crecimiento</title>
+<meta name="description" content="Consultoría estratégica de crecimiento para negocios online. Vengo de la banca de inversión: analizo tu empresa por sus números y decidimos dónde empujar antes de gastar un euro más.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -65,9 +65,17 @@
   .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
   .btn-ghost:hover{background:var(--surface-2)}
 
+  .viz{margin:0;border:1px solid var(--rule);border-radius:14px;background:var(--surface-2);padding:18px;box-shadow:0 18px 40px -30px var(--shadow)}
+  .viz svg{width:100%;height:auto;display:block}
+  .viz-l{font-family:"Public Sans",sans-serif;font-size:16px;font-weight:600;fill:var(--ink)}
+  .viz-cap{font-family:"Public Sans",sans-serif;font-size:12.5px;font-weight:600;fill:var(--ink-faint);letter-spacing:.09em;text-transform:uppercase}
+  .paso-n{font-family:"Newsreader",serif;font-size:.95rem;font-weight:600;color:var(--accent);letter-spacing:.08em;display:block;margin-bottom:.3rem}
+  .final{margin-top:34px;padding:28px 30px;border-left:3px solid var(--accent);background:var(--surface-2);border-radius:0 12px 12px 0}
+  .final p{color:var(--ink-soft);margin:0 0 .7rem;max-width:44em}
+  .final .final-k{color:var(--ink);font-family:"Newsreader",serif;font-size:1.3rem;font-weight:600;margin:0}
   .hero.solo{grid-template-columns:1fr}
   .hero.solo p.lead{max-width:30em}
-  .about.solo{grid-template-columns:.85fr 1.15fr}
+  .about.solo{grid-template-columns:1fr}
   .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:clamp(52px,8vw,96px) 0;border-top:0}
   @media(max-width:860px){.hero{grid-template-columns:1fr;gap:36px}}
   .hero p.lead{max-width:34em}
@@ -88,8 +96,11 @@
   .card ul{color:var(--ink-soft);font-size:.97rem;margin:.7rem 0 0;padding-left:1.1rem}
   .card li{margin-bottom:.35rem}
 
-  .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
-  @media(max-width:860px){.about{grid-template-columns:1fr;gap:28px}}
+  .about{display:grid;grid-template-columns:minmax(160px,210px) 1fr;gap:56px;align-items:center}
+  .retrato-wrap{position:relative}
+  .retrato-wrap::before{content:"";position:absolute;top:18px;left:-18px;right:18px;bottom:-18px;border-radius:16px;background:color-mix(in srgb,var(--accent) 13%,var(--surface-2));border:1px solid var(--rule)}
+  .retrato-wrap .shot{position:relative;z-index:1}
+  @media(max-width:860px){.about{grid-template-columns:1fr;gap:40px}.retrato-wrap{max-width:200px}}
   .about p{color:var(--ink-soft)}
   .creds{list-style:none;margin:26px 0 0;padding:0}
   .creds li{padding-left:1.5rem;position:relative;margin-bottom:.6rem;color:var(--ink-soft);font-size:.97rem}
@@ -122,12 +133,12 @@
 
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="#">Alba <span>de Iranzo</span></a>
+    <a class="brand" href="#">Alba <span>D. Iranzo</span></a>
     <nav class="nav-links">
+      <a href="#metodo">El método</a>
       <a href="#sobre-mi">Sobre mí</a>
-      <a href="#servicios">Cómo ayudo</a>
       <a href="#proceso">Proceso</a>
-      <a href="#contacto" class="btn">Hablemos</a>
+      <a href="llamada.html" class="btn">Agendar llamada</a>
     </nav>
   </div>
 </header>
@@ -136,76 +147,93 @@
   <div class="wrap">
     <section class="hero">
       <div>
-        <p class="eyebrow">Tu socia de crecimiento online</p>
-        <h1>Tu marca de viajes ya vende online, yo me encargo de que escale. Con un plan claro en 90 días.</h1>
-        <p class="lead">Vengo de la banca de inversión y llevo más de quince años analizando empresas. Miro tu negocio igual que miro una compañía cotizada: márgenes, coste de adquisición y retorno por cada euro invertido. Después decidimos dónde empujar.</p>
+        <p class="eyebrow">Consultoría estratégica de crecimiento</p>
+        <h1>Existe una fórmula precisa detrás de las marcas online que escalan. Es la que decide si creces o te quedas donde estás.</h1>
+        <p class="lead">Vengo de la banca de inversión y llevo más de quince años analizando empresas. Miro la tuya igual que miraría una compañía cotizada: márgenes, coste de adquisición y retorno por cada euro invertido. Y después decidimos juntas dónde empujar.</p>
         <div class="hero-cta">
-          <a href="#contacto" class="btn">Hablemos 30 minutos</a>
-          <a href="#servicios" class="btn btn-ghost">Ver cómo trabajo</a>
+          <a href="llamada.html" class="btn">Agendar llamada de 30 minutos</a>
+          <a href="#metodo" class="btn btn-ghost">Ver el método</a>
         </div>
-        <p class="promesa">Ayudo a empresas de viajes con componente tecnológico a escalar a siete cifras con mi fórmula probada: <strong>«Marcas de Viaje Escaladas en 3 pasos, o no pagas»</strong>.</p>
+        <p class="promesa">Ayudo a negocios online que ya facturan a escalar con criterio financiero: <strong>«Negocios Escalados en 3 pasos»</strong>.</p>
       </div>
-      <div class="shot">
-        <img src="fotos/alba-hero.jpg" alt="Alba de Iranzo" onerror="this.closest('.shot').remove();document.querySelector('.hero').classList.add('solo')">
-      </div>
+      <figure class="viz" aria-label="Del primer clic a la venta recurrente, en tres pasos">
+        <svg viewBox="0 0 420 340" role="img">
+          <text x="210" y="34" class="viz-cap" text-anchor="middle">Tu cliente ideal</text>
+
+          <path d="M34 62 L386 62 L350 132 L70 132 Z"   fill="var(--accent)" fill-opacity=".14" stroke="var(--accent)" stroke-opacity=".55"/>
+          <path d="M76 144 L344 144 L308 214 L112 214 Z" fill="var(--accent)" fill-opacity=".24" stroke="var(--accent)" stroke-opacity=".55"/>
+          <path d="M118 226 L302 226 L266 294 L154 294 Z" fill="var(--accent)" fill-opacity=".36" stroke="var(--accent)" stroke-opacity=".55"/>
+
+          <text x="210" y="103" class="viz-l" text-anchor="middle">01 · Atención</text>
+          <text x="210" y="185" class="viz-l" text-anchor="middle">02 · Conversión</text>
+          <text x="210" y="266" class="viz-l" text-anchor="middle">03 · Posventa</text>
+
+          <path d="M210 300 L210 316" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M204 310 L210 317 L216 310" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="210" y="336" class="viz-cap" text-anchor="middle">Ventas que se repiten</text>
+        </svg>
+      </figure>
     </section>
   </div>
 
-  <section id="sobre-mi">
-    <div class="wrap about">
-      <div>
-        <p class="eyebrow">Sobre mí</p>
-        <h2>Quién soy</h2>
-        <div class="shot wide" style="margin-top:24px">
-          <img src="fotos/alba-sobre-mi.jpg" alt="Alba de Iranzo" onerror="this.closest('.shot').remove();document.querySelector('.about').classList.add('solo')">
+
+  <section id="quehago">
+    <div class="wrap">
+      <p class="eyebrow">Qué hago</p>
+      <h2>No soy una agencia de marketing</h2>
+      <p class="lead" style="max-width:36em">Soy la socia de crecimiento que se sienta contigo a decidir <strong>dónde</strong> hay que empujar antes de que gastes un euro más en empujar.</p>
+      <p class="lead" style="max-width:36em">Eso es estrategia: no se trata de hacer más cosas, sino de saber cuáles son las tres que de verdad mueven el resultado y en qué orden. Porque crecer a base de subir el presupuesto de anuncios no es escalar, es pagar más por lo mismo.</p>
+    </div>
+  </section>
+
+  <section id="metodo">
+    <div class="wrap">
+      <p class="eyebrow">El método</p>
+      <h2>Los 3 pasos</h2>
+      <p class="lead" style="max-width:34em">No lo he inventado yo. Es un método probado, y mi trabajo es aplicarlo a tu negocio con criterio financiero.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="paso-n">01</span>
+          <h3>Atención</h3>
+          <p>Captar la atención de tu cliente ideal, de forma orgánica o con tráfico pagado, y dirigirla a un embudo de venta con una oferta de contenido de alto valor.</p>
+        </div>
+        <div class="card">
+          <span class="paso-n">02</span>
+          <h3>Conversión</h3>
+          <p>Crear un sistema que convierta esa atención en ventas, apoyándonos en ofertas de adquisición que ya han demostrado funcionar.</p>
+        </div>
+        <div class="card">
+          <span class="paso-n">03</span>
+          <h3>Posventa</h3>
+          <p>Desarrollar un proceso posventa que extienda el valor de cada cliente a lo largo del tiempo, con automatizaciones como el email marketing.</p>
         </div>
       </div>
-      <div>
-        <p>Soy Alba de Iranzo. Mi padre me enseñó a leer un balance a los catorce años y desde entonces no he dejado de hacerlo: primero en banca de inversión, después por mi cuenta, gestionando mi propia cartera desde hace más de quince años.</p>
-        <p>Hace casi 4 años dejé el mundo de la banca de inversión para emprender. Varios proyectos, 3 países y 4 ciudades después, aprendí algo que ahora es mi forma de trabajar: casi ningún negocio se estanca por falta de ideas. Se estanca porque nadie está mirando los números correctos.</p>
-        <p>Hoy trabajo con marcas de viaje que ya venden online y quieren crecer con criterio. Lo que traigo no es otro manual de crecimiento. Es una mirada financiera y analítica sobre tu negocio online, con la disciplina y el conocimiento respaldado ayudando a las empresas a crecer.</p>
-        <ul class="creds">
-          <li>Ex banca de inversión</li>
-          <li>Más de 15 años invirtiendo en bolsa</li>
-          <li>Emprendedora en el campo de la consultoría estratégica</li>
-        </ul>
+      <div class="final">
+        <p>Cuando este sistema está montado tienes un proceso de captación que funciona siempre, aunque cambien las tendencias del mercado. Sabes exactamente cuánto puedes gastar para traer un cliente nuevo y cuánto vale ese cliente para tu negocio a lo largo del tiempo.</p>
+        <p class="final-k">Y cuando tienes eso, tienes un negocio escalable.</p>
       </div>
     </div>
   </section>
 
-  <section id="servicios">
-    <div class="wrap">
-      <p class="eyebrow">Cómo ayudo</p>
-      <h2>3 pilares de trabajar conmigo</h2>
-      <p class="lead" style="max-width:33em">Todos empiezan igual: entender tu negocio por dentro antes de tocar nada.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Diagnóstico</h3>
-          <p>Dos semanas. Una radiografía completa de tu negocio: de dónde viene cada euro, cuánto te cuesta traer un cliente, qué margen te deja de verdad y por dónde se está escapando el dinero.</p>
-          <ul>
-            <li>Análisis de unit economics</li>
-            <li>Revisión de adquisición y conversión</li>
-            <li>Plan priorizado de las 3 palancas con más impacto</li>
-          </ul>
+  <section id="sobre-mi">
+    <div class="wrap about">
+      <div class="retrato-wrap">
+        <div class="shot">
+          <img src="fotos/alba-hero.jpg" alt="Alba D. Iranzo" onerror="this.closest('.retrato-wrap').remove();document.querySelector('.about').classList.add('solo')">
         </div>
-        <div class="card">
-          <h3>Growth Partner</h3>
-          <p>Acompañamiento continuo. Entro en tu equipo, fijamos objetivos por trimestre y los ejecutamos juntas: captación, conversión y recurrencia.</p>
-          <ul>
-            <li>Sesión semanal de trabajo</li>
-            <li>Cuadro de mando con las métricas que importan</li>
-            <li>Mínimo tres meses</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Proyecto puntual</h3>
-          <p>Algo concreto con principio y final, cuando ya sabes qué necesitas y solo te falta quien lo lleve.</p>
-          <ul>
-            <li>Un lanzamiento</li>
-            <li>Poner orden en la analítica</li>
-            <li>Montar el email marketing</li>
-          </ul>
-        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Sobre mí</p>
+        <h2>Quién soy</h2>
+        <p>Me llamo Alba D. Iranzo. Vengo de la banca de inversión y de la consultoría estratégica. Llevo más de quince años analizando empresas, entendiendo negocios por sus números y ayudando a marcas a crecer su presencia online. Mi padre me enseñó a leer un balance a los catorce años.</p>
+        <p>Hace casi 4 años dejé la banca para emprender. Varios proyectos, 3 países y 4 ciudades después, he estado en los dos lados: el del análisis y el de llevar mi propia marca. Por eso sé lo que cuesta hacer crecer un negocio cuando además tienes que estar metida en todo lo que pasa cada día.</p>
+        <p>Y aprendí algo que ahora es mi forma de trabajar: casi ningún negocio se estanca por falta de ideas. Se estanca porque nadie está mirando los números correctos.</p>
+        <ul class="creds">
+          <li>Ex banca de inversión</li>
+          <li>Consultoría estratégica</li>
+          <li>Más de 15 años analizando empresas</li>
+          <li>Seis proyectos propios, en 3 países</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -213,12 +241,11 @@
   <section id="proceso">
     <div class="wrap">
       <p class="eyebrow">Proceso</p>
-      <h2>Cómo es trabajar conmigo</h2>
+      <h2>Cómo lo hacemos juntas</h2>
       <div class="steps">
-        <div class="step"><div class="step-n">1</div><div><h3>Llamada de 30 minutos</h3><p>Me cuentas dónde estás y qué te está frenando. Si no soy la persona adecuada, te lo digo en esa misma llamada.</p></div></div>
-        <div class="step"><div class="step-n">2</div><div><h3>Diagnóstico</h3><p>Miro datos, web, campañas y márgenes. Salgo con un plan priorizado: qué hacer, en qué orden y qué esperamos que pase.</p></div></div>
-        <div class="step"><div class="step-n">3</div><div><h3>Ejecución</h3><p>Nos vemos una vez por semana. Yo llevo el análisis y la estrategia; tu equipo ejecuta con un plan claro delante. Sin informes que nadie lee.</p></div></div>
-        <div class="step"><div class="step-n">4</div><div><h3>Revisión mensual</h3><p>Cada mes revisamos los números contra lo que dijimos que iba a pasar. Si algo no funciona, se cambia. Con datos, no con sensaciones.</p></div></div>
+        <div class="step"><div class="step-n">1</div><div><h3>Montamos la atención</h3><p>Empezamos por el diagnóstico: de dónde viene hoy cada euro y cuánto te cuesta traer a un cliente. Con eso decidimos por dónde entra la atención de tu cliente ideal y hacia qué oferta la dirigimos.</p></div></div>
+        <div class="step"><div class="step-n">2</div><div><h3>Arreglamos la conversión</h3><p>Construimos el sistema que convierte esa atención en ventas. Aquí es donde suele aparecer el dinero que se estaba escapando sin que nadie lo estuviera mirando.</p></div></div>
+        <div class="step"><div class="step-n">3</div><div><h3>Activamos la posventa</h3><p>Montamos el proceso que hace que cada cliente valga más a lo largo del tiempo. Revisamos los números cada mes contra lo que dijimos que iba a pasar, y lo que no funciona se cambia con datos.</p></div></div>
       </div>
     </div>
   </section>
@@ -231,7 +258,7 @@
         <div class="card yes">
           <h3>Encajamos si…</h3>
           <ul>
-            <li>Tu marca de viajes ya vende online y quieres escalar con orden, no empezar de cero.</li>
+            <li>Tu negocio ya factura y quieres escalar con orden, no empezar de cero.</li>
             <li>Quieres a alguien dentro del equipo, no una agencia que te manda un PDF al mes.</li>
             <li>Estás dispuesta a tomar decisiones mirando los números, aunque no sean los que esperabas.</li>
           </ul>
@@ -253,10 +280,10 @@
       <div class="cta">
         <p class="eyebrow">Contacto</p>
         <h2>¿Hablamos 30 minutos?</h2>
-        <p>Sin compromiso y sin presentación comercial. Me cuentas dónde está tu marca y te digo con honestidad si puedo ayudarte.</p>
+        <p>Sin compromiso y sin presentación comercial. Me cuentas dónde estás, miramos tus números y te digo con honestidad si puedo llevar tu negocio al siguiente nivel o no.</p>
         <div class="hero-cta">
-          <a href="mailto:alba@albadeiranzo.com" class="btn">alba@albadeiranzo.com</a>
-          <a href="https://www.linkedin.com/in/albadeiranzo" class="btn btn-ghost">LinkedIn</a>
+          <a href="llamada.html" class="btn">Agendar mi llamada</a>
+          <a href="mailto:alba@albadeiranzo.com" class="btn btn-ghost">alba@albadeiranzo.com</a>
         </div>
       </div>
     </div>
@@ -265,7 +292,7 @@
 
 <footer>
   <div class="wrap foot-in">
-    <span>© 2026 Alba Delgado Iranzo</span>
+    <span>© 2026 Alba D. Iranzo</span>
     <span><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="https://ciudadanofinanciero.com">Ciudadano Financiero</a></span>
   </div>
 </footer>
