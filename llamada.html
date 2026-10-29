@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Agenda tu llamada — Alba D. Iranzo</title>
-<meta name="description" content="30 minutos para mirar los números de tu negocio y decidir dónde hay que empujar antes de gastar un euro más.">
+<meta name="description" content="15 minutos para mirar los números de tu negocio y decidir dónde hay que empujar antes de gastar un euro más.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -64,9 +64,8 @@
 
   /* calendario */
   .agenda{padding:clamp(48px,7vw,80px) 0;text-align:center;border-bottom:1px solid var(--rule)}
-  .cal{margin:30px auto 0;max-width:820px;min-height:640px;border-radius:14px;overflow:hidden;border:1px solid var(--rule);background:var(--surface);box-shadow:0 18px 40px -32px var(--shadow)}
+  .cal{margin:30px auto 0;max-width:820px;border-radius:14px;overflow:hidden;border:1px solid var(--rule);background:var(--surface);box-shadow:0 18px 40px -32px var(--shadow)}
   .cal iframe{width:100%;height:700px;border:0;display:block}
-  .cal-falta{padding:60px 24px;color:var(--ink-faint);font-size:.95rem}
 
   /* quien soy */
   .quien{padding:clamp(48px,7vw,80px) 0;border-bottom:1px solid var(--rule)}
@@ -104,7 +103,7 @@
 
 <section class="top">
   <div class="wrap">
-    <p class="eyebrow">Llamada de demostración · 30 minutos</p>
+    <p class="eyebrow">Llamada de demostración · 15 minutos</p>
     <h1>La fórmula de 3 pasos que decide si escalas o te quedas donde estás</h1>
     <p class="sub">Existe un patrón detrás de las marcas online que pasan de seis a siete cifras. No es gastar más en anuncios. Te lo cuento en tres minutos.</p>
 
@@ -122,7 +121,10 @@
     <h2>Elige tu hora abajo</h2>
     <p style="color:var(--ink-soft);max-width:32em;margin-left:auto;margin-right:auto">Sin compromiso y sin presentación comercial. Me cuentas dónde estás, miramos tus números y te digo con honestidad si puedo ayudarte o no.</p>
     <div class="cal" id="calendario">
-      <div class="cal-falta">[Aquí va tu calendario — pendiente del enlace]</div>
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/alba-albadeiranzo/llamada-demo?primary_color=1e6a54"
+           style="min-width:320px;height:740px"></div>
+      <noscript><p style="padding:40px 24px"><a href="https://calendly.com/alba-albadeiranzo/llamada-demo">Abre mi calendario para reservar tu hora</a>.</p></noscript>
     </div>
   </div>
 </section>
@@ -149,7 +151,7 @@
 <section class="pasos">
   <div class="wrap">
     <p class="eyebrow">La llamada</p>
-    <h2>Qué pasa en esos 30 minutos</h2>
+    <h2>Qué pasa en esos 15 minutos</h2>
     <div class="pasos-grid">
       <div class="paso"><span class="n">1</span><h3>Me cuentas dónde estás</h3><p>Qué vendes, de dónde viene hoy tu facturación y qué llevas meses intentando sin que se mueva.</p></div>
       <div class="paso"><span class="n">2</span><h3>Miramos los números</h3><p>Cuánto te cuesta traer un cliente, qué margen real te deja y por dónde se está escapando el dinero.</p></div>
@@ -166,5 +168,6 @@
   </div>
 </footer>
 
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
