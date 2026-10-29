@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>La fórmula de 3 pasos — Alba D. Iranzo</title>
+<meta name="description" content="Existe una fórmula precisa detrás de las marcas online que escalan. Te la cuento en tres minutos.">
+<meta property="og:title" content="La fórmula de 3 pasos para escalar tu negocio online">
+<meta property="og:description" content="Existe una fórmula precisa detrás de las marcas online que escalan. Te la cuento en tres minutos.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F4EE; --surface:#FFFFFF; --surface-2:#EFEAE0; --deep:#101A16;
+    --ink:#141D2B; --ink-soft:#4A5668; --ink-faint:#8A94A4;
+    --accent:#1E6A54; --accent-strong:#15513F; --on-accent:#F7F4EE;
+    --rule:#DED6C7; --shadow:rgba(20,29,43,.10);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F1621; --surface:#16202E; --surface-2:#1C2838; --deep:#0A1118;
+      --ink:#ECE7DC; --ink-soft:#AEB8C8; --ink-faint:#78839A;
+      --accent:#5FC0A1; --accent-strong:#84D6BB; --on-accent:#0B1620;
+      --rule:#2A3648; --shadow:rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F1621; --surface:#16202E; --surface-2:#1C2838; --deep:#0A1118;
+    --ink:#ECE7DC; --ink-soft:#AEB8C8; --ink-faint:#78839A;
+    --accent:#5FC0A1; --accent-strong:#84D6BB; --on-accent:#0B1620;
+    --rule:#2A3648; --shadow:rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink)}
+  body{font-family:"Public Sans",ui-sans-serif,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Newsreader",ui-serif,Georgia,serif;margin:0;text-wrap:balance;letter-spacing:-.01em;font-weight:600}
+  p{margin:0 0 1rem}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+  .eyebrow{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;margin:0 0 .8rem}
+
+  .marca{text-align:center;padding:18px 20px;font-family:"Newsreader",serif;font-size:1.02rem;font-weight:600;border-bottom:1px solid var(--rule)}
+  .marca span{color:var(--accent)}
+
+  /* portada */
+  .top{background:var(--deep);color:#F2EFE6;padding:34px 0 38px;text-align:center}
+  .top .eyebrow{color:#8FD9BF}
+  .top h1{color:#FFF;font-size:clamp(1.75rem,7vw,2.6rem);line-height:1.14}
+  .top .sub{color:#C3CBC6;font-size:1.03rem;margin:14px auto 0;max-width:32em}
+
+  .video{margin:24px auto 0;max-width:640px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.14)}
+  .video iframe{width:100%;height:100%;border:0;display:block}
+
+  .btn{display:inline-block;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:600;font-size:1.02rem;padding:15px 30px;border-radius:999px;line-height:1.2}
+  .btn:hover{background:var(--accent-strong);color:var(--on-accent)}
+  .cta-zona{margin-top:26px}
+  .cta-nota{color:var(--ink-faint);font-size:.86rem;margin:12px 0 0}
+  .top .cta-nota{color:#8E9A95}
+
+  /* bloques */
+  section{padding:42px 0;border-bottom:1px solid var(--rule)}
+  section .eyebrow{color:var(--accent)}
+  section h2{font-size:clamp(1.4rem,5vw,1.9rem);margin-bottom:.8rem}
+  section p{color:var(--ink-soft)}
+
+  .reserva{text-align:center}
+  .reserva p{max-width:30em;margin-left:auto;margin-right:auto}
+  .cal{margin:22px auto 0;max-width:760px;border-radius:12px;overflow:hidden;border:1px solid var(--rule);background:var(--surface);box-shadow:0 16px 36px -30px var(--shadow)}
+  .pasos{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
+  .pasos li{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:18px 20px}
+  .pasos b{display:block;font-family:"Newsreader",serif;font-size:1.1rem;margin-bottom:.25rem}
+  .pasos span{color:var(--ink-soft);font-size:.96rem}
+  .pasos em{font-style:normal;color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:.1em;display:block;margin-bottom:.35rem}
+
+  .yo{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center}
+  .yo .foto{border-radius:12px;overflow:hidden;border:1px solid var(--rule);aspect-ratio:4/5}
+  .yo .foto img{width:100%;height:100%;object-fit:cover}
+  .yo p{margin:0;font-size:.97rem}
+  @media(min-width:640px){ .yo{grid-template-columns:130px 1fr;gap:26px} }
+
+  .cierre{text-align:center;padding:48px 0 54px;border-bottom:0}
+  .cierre h2{margin-bottom:.6rem}
+
+  footer{padding:24px 0 40px;color:var(--ink-faint);font-size:.82rem;text-align:center}
+  footer a{color:var(--ink-faint)}
+</style>
+</head>
+<body>
+
+<div class="marca">Alba <span>D. Iranzo</span></div>
+
+<section class="top">
+  <div class="wrap">
+    <p class="eyebrow">Consultoría estratégica de crecimiento</p>
+    <h1>Existe una fórmula precisa detrás de las marcas online que escalan</h1>
+    <p class="sub">Es la que decide si creces o te quedas donde estás. Te la cuento en tres minutos.</p>
+
+    <div class="video" id="video" hidden>
+      <!-- VSL: pegar aqui el iframe del video cuando este grabado -->
+    </div>
+
+    <div class="cta-zona">
+      <a href="#reserva" class="btn">Reservar mi llamada de 15 min</a>
+      <p class="cta-nota">Sin compromiso y sin presentación comercial.</p>
+    </div>
+  </div>
+</section>
+
+<section id="reserva" class="reserva">
+  <div class="wrap">
+    <p class="eyebrow">Reserva</p>
+    <h2>Elige tu hora abajo</h2>
+    <p>Quince minutos. Me cuentas dónde estás, miramos tus números y te digo con honestidad si puedo ayudarte o no.</p>
+    <div class="cal">
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/alba-albadeiranzo/llamada-demo?primary_color=1e6a54"
+           style="min-width:280px;height:740px"></div>
+      <noscript><p><a href="https://calendly.com/alba-albadeiranzo/llamada-demo">Abre mi calendario para reservar tu hora</a>.</p></noscript>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">El método</p>
+    <h2>Los 3 pasos</h2>
+    <p>No lo he inventado yo. Es un método probado, y mi trabajo es aplicarlo a tu negocio con criterio financiero.</p>
+    <ul class="pasos">
+      <li><em>01</em><b>Atención</b><span>Captar la atención de tu cliente ideal y dirigirla a un embudo con una oferta de contenido de alto valor.</span></li>
+      <li><em>02</em><b>Conversión</b><span>Un sistema que convierte esa atención en ventas, con ofertas de adquisición que ya han demostrado funcionar.</span></li>
+      <li><em>03</em><b>Posventa</b><span>Un proceso que hace que cada cliente valga más a lo largo del tiempo, con automatizaciones como el email marketing.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Quién te lo cuenta</p>
+    <div class="yo">
+      <div class="foto"><img src="/fotos/alba-hero.jpg" alt="Alba D. Iranzo" onerror="this.closest('.foto').remove()"></div>
+      <p>Soy <strong>Alba D. Iranzo</strong>. Vengo de la banca de inversión y de la consultoría estratégica, y llevo más de quince años analizando empresas por sus números. No soy una agencia de marketing: soy la socia de crecimiento que decide contigo <strong>dónde</strong> empujar antes de que gastes un euro más.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="wrap">
+    <h2>¿Lo vemos en tu negocio?</h2>
+    <p>Quince minutos. Me cuentas dónde estás, miramos tus números y te digo con honestidad si puedo ayudarte o no.</p>
+    <div class="cta-zona">
+      <a href="#reserva" class="btn">Reservar mi llamada de 15 min</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026 Alba D. Iranzo · <a href="/">albadeiranzo.com</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a>
+  </div>
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
