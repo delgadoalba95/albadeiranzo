@@ -58,6 +58,20 @@
   .top h1{color:#FFF}
   .top .eyebrow{color:#8FD9BF}
   .top p.sub{color:#C3CBC6;font-size:1.12rem;max-width:34em;margin:18px auto 0}
+  .puerta{margin:30px auto 0;max-width:460px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:24px 22px;text-align:left}
+  .puerta h3{color:#FFF;font-size:1.15rem;margin:0 0 6px;text-align:center}
+  .puerta .sub-p{color:#AFBAB5;font-size:.92rem;margin:0 0 18px;text-align:center}
+  .puerta label{display:block;color:#C3CBC6;font-size:.82rem;font-weight:600;margin:0 0 5px}
+  .puerta input[type=text],.puerta input[type=email]{width:100%;padding:12px 14px;margin:0 0 14px;border-radius:9px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.25);color:#FFF;font:inherit;font-size:1rem}
+  .puerta input[type=text]:focus,.puerta input[type=email]:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .puerta .consent{display:flex;gap:9px;align-items:flex-start;margin:4px 0 18px}
+  .puerta .consent input{margin-top:3px;flex:0 0 auto}
+  .puerta .consent span{color:#AFBAB5;font-size:.82rem;line-height:1.45;font-weight:400}
+  .puerta .consent a{color:#8FD9BF}
+  .puerta button{width:100%;border:0;cursor:pointer;background:var(--accent);color:var(--on-accent);font:inherit;font-weight:600;font-size:1.02rem;padding:14px 20px;border-radius:999px}
+  .puerta button:hover{background:var(--accent-strong)}
+  .puerta button[disabled]{opacity:.6;cursor:default}
+  .puerta .aviso{color:#F0B9B9;font-size:.86rem;margin:12px 0 0;text-align:center}
   .vid{margin:36px auto 0;max-width:680px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.12)}
   .vid iframe,.vid video{width:100%;height:100%;border:0;display:block}
   .top .btn{margin-top:30px}
@@ -107,9 +121,24 @@
     <h1>La fórmula de 3 pasos que decide si escalas o te quedas donde estás</h1>
     <p class="sub">Existe un patrón detrás de las marcas online que pasan de seis a siete cifras. No es gastar más en anuncios. Te lo cuento en tres minutos.</p>
 
-    <div class="vid" id="vsl">
-      <iframe src="https://www.loom.com/embed/1783936b76984373be073d8041f602bc?hideEmbedTopBar=true&amp;hide_owner=true&amp;hide_share=true&amp;hide_title=true" title="Fórmula de tres pasos para escalar ventas" allowfullscreen allow="fullscreen; picture-in-picture"></iframe>
+    <div class="puerta" id="puerta">
+      <h3>Para ver el vídeo</h3>
+      <p class="sub-p">Déjame tu nombre y tu correo y empieza ahora mismo.</p>
+      <form id="form-acceso" novalidate>
+        <label for="p-nombre">Nombre</label>
+        <input id="p-nombre" name="nombre" type="text" autocomplete="given-name" required>
+        <label for="p-email">Correo electrónico</label>
+        <input id="p-email" name="email" type="email" autocomplete="email" required>
+        <div class="consent">
+          <input id="p-consent" name="consent" type="checkbox">
+          <span><label for="p-consent" style="display:inline;font-weight:400;color:inherit;margin:0">Acepto que Alba D. Iranzo guarde mi nombre y mi correo para enviarme información sobre sus servicios.</label> <a href="/privacidad.html">Política de privacidad</a>.</span>
+        </div>
+        <button type="submit">Ver el vídeo</button>
+        <p class="aviso" id="aviso-acceso" hidden></p>
+      </form>
     </div>
+
+    <div class="vid" id="vsl" hidden></div>
 
     <p><a href="#agenda" class="btn">Agendar mi llamada</a></p>
   </div>
@@ -165,5 +194,55 @@
   </div>
 </footer>
 
+
+<script>
+(function () {
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzcfnXQs2a0WpVkqFu0splAFFu5cN0-sQ4mHCx7A1VlABY2zUTGnLLzmXL-EDYxqN9ovw/exec';
+  var VIDEO    = 'https://www.loom.com/embed/1783936b76984373be073d8041f602bc?hideEmbedTopBar=true&amp;hide_owner=true&amp;hide_share=true&amp;hide_title=true';
+  var CLAVE    = 'vsl-acceso';
+
+  var puerta = document.getElementById('puerta');
+  var caja   = document.getElementById('vsl');
+  var form   = document.getElementById('form-acceso');
+  var aviso  = document.getElementById('aviso-acceso');
+
+  function mostrarVideo() {
+    caja.innerHTML = '<iframe src="' + VIDEO + '" title="Alba D. Iranzo" allowfullscreen allow="fullscreen; picture-in-picture"></iframe>';
+    caja.hidden = false;
+    if (puerta) puerta.hidden = true;
+  }
+
+  try { if (localStorage.getItem(CLAVE)) { mostrarVideo(); return; } } catch (e) {}
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    aviso.hidden = true;
+
+    var nombre = form.nombre.value.trim();
+    var email  = form.email.value.trim();
+
+    if (!nombre || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || !form.consent.checked) {
+      aviso.textContent = 'Necesito tu nombre, un correo válido y tu permiso para guardarlos.';
+      aviso.hidden = false;
+      return;
+    }
+
+    var boton = form.querySelector('button');
+    boton.disabled = true;
+    boton.textContent = 'Un momento…';
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      body: JSON.stringify({ nombre: nombre, email: email, origen: location.pathname })
+    }).then(function (r) { return r.json(); })
+      .catch(function () { return { ok: false }; })
+      .then(function (res) {
+        try { localStorage.setItem(CLAVE, '1'); } catch (e) {}
+        if (!res || !res.ok) { console.warn('No se pudo registrar el dato'); }
+        mostrarVideo();
+      });
+  });
+})();
+</script>
 </body>
 </html>
