@@ -1,2 +1,10 @@
 .DS_Store
+
+# Original sin recortar: lleva los pies, que Alba pidio que no se vieran
 fotos/perfil_masresolucion2.jpg
+
+# Avatar de Google: no lo usa la web, es para su perfil
+fotos/alba-avatar.jpg
+
+# Automatizaciones internas: el repo es publico, esto no se publica
+scripts/
